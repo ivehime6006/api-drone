@@ -5,6 +5,7 @@ const app = express()
 
 // app.use(cors())                to enable cross-domain communication with browser apps of different origins (default * all origin)
 app.use(express.json(), cors())
+
 // const Drone = require('./models/Drone')     //Import Drone
 // const Medication = require('./models/Medication')     //Import Drone
 

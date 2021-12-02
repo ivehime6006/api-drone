@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 //SchemaType for Medication
 const medicationSchema = new Schema({
+  // name: String,    //Schema
   name: {type: String},
   weight: {type: Number},
   code: {type: String},

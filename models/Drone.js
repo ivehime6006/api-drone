@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 //SchemaType for Drone
 const droneSchema = new Schema({
+  // serialNumber: String,     //Schema
   serialNumber: {type: String},
   model: {
     type: String,
