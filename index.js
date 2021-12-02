@@ -8,14 +8,6 @@ app.use(express.json(), cors())
 // const Drone = require('./models/Drone')     //Import Drone
 // const Medication = require('./models/Medication')     //Import Drone
 
-
-// const http = require('http')
-//
-// const app = http.createServer((request, response) => {
-//     response.writeHead(200, {'Content-Type': 'application/json'})
-//     response.end('Drone')
-// })
-
 app.get('/', (request, response) => {
     response.send('Drone')
 })
