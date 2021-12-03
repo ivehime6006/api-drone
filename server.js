@@ -9,9 +9,9 @@ const MedicationRoutes = require('./routes/MedicationRoutes.js')
 //To enable cross-domain communication with browser apps of different origins (default * all origin)
 app.use(express.json(), cors())
 
-//TODO - Controllers
-const Drone = require('./models/Drone')     //Import Drone
-const Medication = require('./models/Medication')     //Import Medication
+// //TODO - Controllers
+// const Drone = require('./models/Drone')
+// const Medication = require('./models/Medication')
 
 
 //TODO - Routes
@@ -23,8 +23,6 @@ app.use('/api', DroneRoutes);
 app.use('/api', MedicationRoutes);
 
 
-
-// const PORT = process.env.PORT || 3003
 const PORT = 3003
 
 //TODO - Start Server

@@ -19,10 +19,4 @@ const droneSchema = new Schema({
   },
 })
 
-  droneSchema.set('toJSON', {
-    transform: (document, returnedObject) => {
-      returnedObject.batteryCapacity = `${returnedObject.batteryCapacity}%`
-    }
-  })
-
   module.exports = mongoose.model('Drone', droneSchema)

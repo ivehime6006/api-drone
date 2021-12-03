@@ -1,0 +1,1 @@
+GET http://localhost:3003/api/drones/61aa4425b0fc3621c5915259

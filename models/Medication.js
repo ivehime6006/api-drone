@@ -9,4 +9,6 @@ const medicationSchema = new Schema({
   image: String,
 })
 
+
+
   module.exports = mongoose.model('Medication', medicationSchema)
