@@ -3,8 +3,10 @@ const Schema = mongoose.Schema
 
 //SchemaType for Drone
 const droneSchema = new Schema({
-  // serialNumber: String,     //Schema
-  serialNumber: {type: String},
+  serialNumber: {
+    type: String,
+    maxlength: 100
+  },
   model: {
     type: String,
     enum: ["Lightweight", "Middleweight", "Cruiserweight", "Heavyweight"]
@@ -17,6 +19,10 @@ const droneSchema = new Schema({
   },
 })
 
-// const Drone = mongoose.model('Drone', droneSchema)
-// module.exports = Drone
+  droneSchema.set('toJSON', {
+    transform: (document, returnedObject) => {
+      returnedObject.batteryCapacity = `${returnedObject.batteryCapacity}%`
+    }
+  })
+
   module.exports = mongoose.model('Drone', droneSchema)

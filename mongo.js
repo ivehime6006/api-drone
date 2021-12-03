@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const password = require('./password.js')
-const connectionString = `mongodb+srv://hime:${password}@clusterdrone.peknx.mongodb.net/apidrone?retryWrites=true&w=majority`
+const connectionString = `mongodb+srv://hime:${password}@apidrone.w53h0.mongodb.net/apidrone`
 
 //Connexion to MongoDB
 mongoose.connect(connectionString)
@@ -9,6 +9,12 @@ mongoose.connect(connectionString)
   }).catch(err => {
     console.error(err)
 })
+
+
+// Database
+// mongoose.connect('mongodb://127.0.0.1:27017/data-manager', {useNewUrlParser: true, useUnifiedTopology: true})
+//   .then(() => console.log('Connected to DataBase'))
+//   .catch(err => console.error(err));
 
 
 

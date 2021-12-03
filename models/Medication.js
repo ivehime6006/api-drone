@@ -1,13 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-//SchemaType for Medication
+//Schema for Medication
 const medicationSchema = new Schema({
-  // name: String,    //Schema
-  name: {type: String},
-  weight: {type: Number},
-  code: {type: String},
-  image: {type: Number},
+  name: String,
+  weight: Number,
+  code: String,
+  image: Number,
 })
 
   module.exports = mongoose.model('Medication', medicationSchema)
