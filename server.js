@@ -11,7 +11,7 @@ app.use(express.json(), cors())
 
 //TODO - Controllers
 const Drone = require('./models/Drone')     //Import Drone
-// const Medication = require('./models/Medication')     //Import Drone
+const Medication = require('./models/Medication')     //Import Medication
 
 
 //TODO - Routes
@@ -20,6 +20,7 @@ app.get('/', (request, response) => {
 })
 
 app.use('/api', DroneRoutes);
+app.use('/api', MedicationRoutes);
 
 
 
