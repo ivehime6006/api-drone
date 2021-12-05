@@ -1,26 +1,16 @@
 const routes = require('express').Router()
 const Medication = require('../models/Medication.js')
 
-routes.get('/medication', (request, response) => {
-  Medication.find({})
-    .then(result => {
-      response.json(result)
-    }).catch(error => {
-    response.json(error);
-  })
-})
-
-
 routes.post('/medication', (request, response) => {
   const {name, weight, code, image} = request.body
 
   let nameVerification = new RegExp(/^[A-Za-z][A-Za-z0-9_-]*$/);
-  // console.log(nameVerification.test("anca-las_te0"))
-  // console.log(nameVerification.test("7ancalaste"))
+  // console.log(nameVerification.tests("anca-las_te0"))
+  // console.log(nameVerification.tests("7ancalaste"))
 
   let codeVerification = new RegExp(/^[A-Z0-9_]*$/);
-  // console.log(codeVerification.test("ABC_245"))
-  // console.log(codeVerification.test("aBC25"))
+  // console.log(codeVerification.tests("ABC_245"))
+  // console.log(codeVerification.tests("aBC25"))
 
   if (!nameVerification.test(name)) {
     response.status(417).json({
@@ -37,7 +27,6 @@ routes.post('/medication', (request, response) => {
     return
   }
 
-
   const medication = new Medication({
     name,
     weight,
@@ -53,6 +42,14 @@ routes.post('/medication', (request, response) => {
   });
 })
 
-
 module.exports = routes;
 
+
+routes.get('/medication', (request, response) => {
+  Medication.find({})
+    .then(result => {
+      response.json(result)
+    }).catch(error => {
+    response.json(error);
+  })
+})

@@ -17,6 +17,10 @@ const droneSchema = new Schema({
     type: String,
     enum: ["IDLE", "LOADING", "LOADED", "DELIVERING", "DELIVERED", "RETURNING"]
   },
+  medication: [{
+    type: Schema.Types.ObjectID,
+    ref: 'Medication'
+  }]
 })
 
   module.exports = mongoose.model('Drone', droneSchema)

@@ -6,9 +6,7 @@ const medicationSchema = new Schema({
   name: String,
   weight: Number,
   code: String,
-  image: String,
+  image: String
 })
-
-
 
   module.exports = mongoose.model('Medication', medicationSchema)
