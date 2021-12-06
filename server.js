@@ -45,6 +45,9 @@ app.use('/api', MedicationRoutes);
 const PORT = 3002
 
 //Start Server
-app.listen(PORT, () => {
+const serverInit = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
+
+module.exports = {app, serverInit};
+
